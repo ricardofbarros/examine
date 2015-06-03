@@ -1,0 +1,29 @@
+{
+  "name": "check-up",
+  "version": "0.0.1",
+  "description": "Avoid exceptions like a boss!",
+  "main": "index.js",
+  "scripts": {
+    "test": " "
+  },
+  "keywords": [
+    "check",
+    "exception",
+    "error",
+    "convention",
+    "error",
+    "handling",
+    "uncaught"
+  ],
+  "author": {
+    "name": "Ricardo Barros",
+    "email": "ricardofbarros@hotmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  }
+}
