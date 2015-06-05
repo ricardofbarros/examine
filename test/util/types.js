@@ -9,7 +9,10 @@ var types = {
   boolean: true,
   obj: {},
   array: [],
-  buffer: new Buffer(1234)
+  buffer: new Buffer(1234),
+  nulz: null,
+  undf: undefined,
+  regexp: /regexp/
 }
 
 module.exports = types
