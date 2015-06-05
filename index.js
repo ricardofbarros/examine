@@ -1,2 +1,2 @@
 // Export it!
-module.exports = require('./lib/check')
+module.exports = require('./lib/examine')
