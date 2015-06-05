@@ -4,15 +4,17 @@ var types = {
   string: 'hey',
   number: 10,
   fn: function coolName () {},
-  error: new Error(),
-  date: new Date(),
   boolean: true,
   obj: {},
   array: [],
-  buffer: new Buffer(1234),
   nulz: null,
   undf: undefined,
-  regexp: /regexp/
+  regexp: /regexp/,
+
+  // Types of common objects
+  buffer: new Buffer(1234),
+  error: new Error(),
+  date: new Date()
 }
 
 module.exports = types
