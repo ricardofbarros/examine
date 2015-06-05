@@ -3,7 +3,7 @@
 var types = {
   string: 'hey',
   number: 10,
-  fn: function () {},
+  fn: function coolName () {},
   error: new Error(),
   date: new Date(),
   boolean: true,
