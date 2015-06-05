@@ -1,10 +1,10 @@
 {
   "name": "examine",
-  "version": "0.0.1",
-  "description": "assert code in production and write functional tests easily",
+  "version": "0.1.0",
+  "description": "assert code in production like a boss",
   "main": "index.js",
   "scripts": {
-    "test": " "
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "keywords": [
     "examine",
