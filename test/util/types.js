@@ -8,7 +8,8 @@ var types = {
   date: new Date(),
   boolean: true,
   obj: {},
-  array: []
+  array: [],
+  buffer: new Buffer(1234)
 }
 
 module.exports = types
