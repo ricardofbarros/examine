@@ -28,6 +28,7 @@
     "chai": "^2.3.0"
   },
   "devDependencies": {
+    "async": "^1.2.1",
     "mocha": "^2.2.5"
   }
 }
