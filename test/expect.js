@@ -11,7 +11,13 @@ var examine = new Examine()
 var expect = examine.expect
 
 // Helper to test throws
-function testThrow (fn, cb) {
+function testThrow (msgFlag, fn, cb) {
+  if (typeof msgFlag === 'function') {
+    cb = fn
+    fn = msgFlag
+    msgFlag = true
+  }
+
   try {
     fn()
   } catch(err) {
@@ -19,8 +25,10 @@ function testThrow (fn, cb) {
       return cb(new Error('error is not from AssertionError, could be syntax error'))
     }
 
-    if (!(/prefix testing/.test(err.message))) {
-      return cb(new Error('error message wasn\'t passed properly'))
+    if (msgFlag) {
+      if (!(/prefix testing/.test(err.message))) {
+        return cb(new Error('error message wasn\'t passed properly'))
+      }
     }
 
     return cb()
@@ -95,6 +103,45 @@ describe('examine.expect # full API test', function () {
         '3': function () {
           expect(obj, 'prefix testing').to.have.property('foo')
             .and.not.equal('baz')
+        }
+      }
+
+      // Run failing tests
+      return async.waterfall([
+        testThrow.bind(null, tests['1']),
+        testThrow.bind(null, tests['2']),
+        testThrow.bind(null, tests['3'])
+      ], next)
+    })
+  })
+
+  describe('expect.deep', function () {
+    var barObj = { bar: 'baz' }
+    var fooObj = { foo: 'foz' }
+    var veryDeepObj = {
+      foo: {
+        bar: {
+          baz: 'quux'
+        }
+      }
+    }
+
+    it('should assert successfuly', function () {
+      expect(barObj).to.deep.equal({ bar: 'baz' })
+      expect(veryDeepObj).to.have.deep.property('foo.bar.baz', 'quux')
+    })
+
+    it('should throw an error', function (next) {
+      // Tests that should fail
+      var tests = {
+        '1': function () {
+          expect(fooObj, 'prefix testing').to.deep.equal({ bar: 'baz' })
+        },
+        '2': function () {
+          expect(veryDeepObj, 'prefix testing').to.have.deep.property('foo.bar.baz', 'nop')
+        },
+        '3': function () {
+          expect(veryDeepObj, 'prefix testing').to.have.deep.property('foo.bar.nop', 'quux')
         }
       }
 
