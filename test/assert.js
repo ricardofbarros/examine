@@ -9,7 +9,13 @@ var examine = new Examine()
 var assert = examine.assert
 
 // Helper to test throws
-function testThrow (fn, cb) {
+function testThrow (msgFlag, fn, cb) {
+  if (typeof msgFlag === 'function') {
+    cb = fn
+    fn = msgFlag
+    msgFlag = true
+  }
+
   try {
     fn()
   } catch(err) {
@@ -17,8 +23,10 @@ function testThrow (fn, cb) {
       return cb(new Error('error is not from AssertionError, could be syntax error'))
     }
 
-    if (!(/prefix testing/.test(err.message))) {
-      return cb(new Error('error message wasn\'t passed properly'))
+    if (msgFlag) {
+      if (!(/prefix testing/.test(err.message))) {
+        return cb(new Error('error message wasn\'t passed properly'))
+      }
     }
 
     return cb()
@@ -799,8 +807,8 @@ describe('examine.assert # full API test', function () {
     })
 
     it('should throw an error', function (next) {
-      return testThrow(function () {
-        assert.changes(fnVal, obj, 'greeting', 'prefix testing')
+      return testThrow(false, function () {
+        assert.changes(fnVal, obj, 'greeting')
       }, next)
     })
   })
