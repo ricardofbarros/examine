@@ -1,5 +1,6 @@
 # examine
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Coverage Status](https://coveralls.io/repos/ricardofbarros/examine/badge.svg)](https://coveralls.io/r/ricardofbarros/examine)
 
 examine is a utility module that provides a powerful yet simple API to assert code in production.
 Using an [assertion framework](https://github.com/chaijs/chai) wrapped inside examine you will be able
