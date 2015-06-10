@@ -29,8 +29,6 @@ assert.typeOf(string, 'boolean')
 console.log('This wont be executed')
 ```
 
-If you want to see some more practical examples there are some in the [`examples` directory]().
-
 ## API
 
 ### examine.subject(handler)
