@@ -1,6 +1,6 @@
 {
   "name": "examine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "assert + error-first callback",
   "main": "lib/examine.js",
   "homepage": "http://github.com/ricardofbarros/examine",
