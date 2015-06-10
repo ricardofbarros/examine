@@ -1,7 +1,7 @@
 {
   "name": "examine",
   "version": "0.1.0",
-  "description": "assert code in production like a boss",
+  "description": "assert + error-first callback",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
