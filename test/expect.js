@@ -1,7 +1,7 @@
 /* global describe, it */
 
 // Dependencies
-var Examine = require('../index')
+var Examine = require('../lib/examine')
 var async = require('async')
 var chai = require('chai')
 var AssertionError = chai.AssertionError

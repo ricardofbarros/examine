@@ -4,7 +4,7 @@ var chai = require('chai')
 var expect = chai.expect
 
 // Build a examine
-var Examine = require('../index')
+var Examine = require('../lib/examine')
 
 describe('examine constructor', function () {
 

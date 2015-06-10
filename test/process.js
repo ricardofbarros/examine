@@ -4,7 +4,7 @@ var chai = require('chai')
 var AssertionError = chai.AssertionError
 
 // Build a examine
-var Examine = require('../index')
+var Examine = require('../lib/examine')
 
 // Modify process._fatalException
 require('../lib/wrappers/process')
