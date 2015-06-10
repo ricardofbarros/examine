@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "assert + error-first callback",
   "main": "lib/examine.js",
+  "homepage": "http://github.com/ricardofbarros/examine",
   "scripts": {
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
@@ -27,6 +28,16 @@
   "license": "MIT",
   "dependencies": {
     "chai": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ricardofbarros/examine.git"
+  },
+  "bugs": {
+    "url": "http://github.com/ricardofbarros/examine/issues"
+  },
+  "engines": {
+    "node": ">= 0.10"
   },
   "devDependencies": {
     "async": "^1.2.1",
