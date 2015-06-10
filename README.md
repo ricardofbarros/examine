@@ -2,10 +2,10 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 examine is a utility module that provides a powerful yet simple API to assert code in production.
-Using an [assertion framework](https://github.com/chaijs/chai) wrapped inside examine you will be able
+Using an [assertion framework](https://github.com/chaijs/chai) wrapped inside this package you will be able
 to use the assertion framework APIs without the fear of uncaught exceptions.
 
-Errors thrown by the `assert` and `expect` APIs are caught and handled by the subject handler.
+Errors thrown by the `assert` and `expect` APIs are caught and handled by the callback you bind to examine.
 
 Imagine a big invisible and smart `try-catch` block wrapped around your app that only catches specific errors. That's what this is.
 
@@ -20,7 +20,7 @@ function errorHandler (err) {
   console.log('Caught it!', err)
 }
 
-examine.bind(errorHandler)
+examine.subject(errorHandler)
 
 var string = 'Hello :)'
 
@@ -56,7 +56,7 @@ function errorHandler (err) {
   console.log('This wont be called')
 }
 
-examine.bind(errorHandler)
+examine.subject(errorHandler)
 
 try {
   assert.ok(null)
