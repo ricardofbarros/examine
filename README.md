@@ -78,7 +78,7 @@ catch it.
 No, and you can still use it without affecting the functionality of this package.
 
 ### Is this [*black magic*](http://en.wikipedia.org/wiki/Magic_%28programming%29)?
-I don't consider this to be *black magic*, just a clever hack to `process`. You can see the source of the mystery [here]().
+I don't consider this to be *black magic*, just a clever hack. You can see the source of the mystery [here](https://github.com/ricardofbarros/examine/blob/master/lib/wrappers/process.js).
 
 ### Where is `should` style?
 `should` is not supported because of the following reasons:
