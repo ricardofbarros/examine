@@ -2,7 +2,6 @@
 // Dependencies
 var chai = require('chai')
 var expect = chai.expect
-var AssertionError = chai.AssertionError
 
 // Build a examine
 var Examine = require('../index')
