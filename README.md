@@ -82,12 +82,12 @@ I don't consider this to be *black magic*, just a clever hack. You can see the s
 ### Where is `should` style?
 `should` is not supported because of the following reasons:
 - It is considered bad practice to modify the prototype of `String`, `Object`, `Number`, `Boolean`, etc.
-- It is not possible to know which subject handler that should be called
+- It is not possible to know which subject handler should be called
 
 
 ## TODO
 - Finish `assert` and `expect` APIs tests
-- Add some practical examples
+- Add some examples
 
 ## License
 MIT
